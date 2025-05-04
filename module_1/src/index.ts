@@ -104,3 +104,27 @@ const sutdent2: Student = {
   class: 12,
   roll: 254,
 };
+
+// union type
+type Frontend = 'React' | 'Angular';
+type Backend = 'Node' | 'Php';
+
+const developer: Frontend = 'React';
+
+// intersection type
+type FrontendDeveloper = {
+  skill: string[];
+  frontend: 'React' | 'Angular';
+};
+type BackendDeveloper = {
+  skill: string[];
+  backend: 'Node' | 'Php';
+};
+
+type FullStackDeveloper = FrontendDeveloper & BackendDeveloper;
+
+const fullStackDeveloper: FullStackDeveloper = {
+  skill: ['HTML', 'CSS', 'JS', 'Node', 'Express', 'Mongodb'],
+  frontend: 'React',
+  backend: 'Node',
+};
