@@ -1,5 +1,5 @@
 // String
-const text: string = 'hello mehedi!';
+const str: string = 'hello mehedi!';
 
 // Tuple
 const data: [string, number, boolean] = ['mehedi', 30, true];
@@ -31,3 +31,29 @@ const arrowFunc = (num1: number, num2: number): number => num1 + num2;
 const arr: number[] = [1, 3, 5, 6, 5];
 
 const newArr: number[] = arr.map((num: number): number => num * num);
+
+// spread and rest operator
+const obj1 = {
+  name: 'mehedi',
+  job: 'teacher',
+  age: 20,
+};
+const obj2 = {
+  fName: 'hasan',
+  occupation: 'student',
+};
+
+const obj3 = {
+  ...obj1,
+  ...obj2,
+};
+
+const arr2: string[] = ['Akash', 'Bappy'];
+const arr3: string[] = [];
+arr3.push(...arr2);
+
+// rest operator
+const greeting = (...friends: string[]) => {
+  friends.forEach(frnd => console.log(frnd));
+};
+greeting('mehedi', 'akash');
