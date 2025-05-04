@@ -139,4 +139,12 @@
   const user = undefined;
 
   console.log(user ?? 'Guest');
+
+  // never type
+  function throwNewError(value: string): never {
+    throw new Error(value);
+  }
+
+  throwNewError('>>>>>This is an error<<<<<');
 }
+// tsnd --respawn src/index.ts
