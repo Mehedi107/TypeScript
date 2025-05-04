@@ -22,4 +22,18 @@ const worker: withRoleExtend = {
   hours: 5,
   company: 'Concord',
 };
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Generics
+type GenericArr<T> = Array<T>;
+
+// const str: string[] = ['x', 'y', 'z']
+const str: GenericArr<string> = ['x', 'y', 'z'];
+
+// const num: number[] = [1, 2, 3]
+const num: GenericArr<number> = [1, 2, 3];
+
+// const bool: boolean[] = [true, false, true]
+const bool: GenericArr<boolean> = [true, false, true];
+
 // tsnd --respawn src/index.ts
