@@ -57,3 +57,15 @@ const friends = [
 ];
 const [a, , bestFriend, ...rest] = friends;
 console.log(rest);
+const sutdent1 = {
+    fName: 'Robin',
+    age: 20,
+    class: 12,
+    roll: 254,
+};
+const sutdent2 = {
+    fName: 'Jessi',
+    age: 20,
+    class: 12,
+    roll: 254,
+};

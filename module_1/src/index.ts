@@ -83,3 +83,24 @@ const friends: string[] = [
 
 const [a, , bestFriend, ...rest] = friends;
 console.log(rest);
+
+// Type alias
+type Student = {
+  fName: string;
+  age: number;
+  class: number;
+  roll: number;
+};
+
+const sutdent1: Student = {
+  fName: 'Robin',
+  age: 20,
+  class: 12,
+  roll: 254,
+};
+const sutdent2: Student = {
+  fName: 'Jessi',
+  age: 20,
+  class: 12,
+  roll: 254,
+};
