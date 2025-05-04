@@ -39,3 +39,21 @@ const greeting = (...friends) => {
     friends.forEach(frnd => console.log(frnd));
 };
 greeting('mehedi', 'akash');
+// object destructing
+const person = {
+    fName: 'Hasan',
+    age: 50,
+    occupation: 'Stock Holder',
+};
+const { age, occupation, fName } = person;
+// array destructuring
+const friends = [
+    'Monica',
+    'Rachel',
+    'Phebe',
+    'Ross',
+    'Josh',
+    'Tokyo',
+];
+const [a, , bestFriend, ...rest] = friends;
+console.log(rest);
