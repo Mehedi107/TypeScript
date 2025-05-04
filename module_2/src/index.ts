@@ -36,4 +36,40 @@ const num: GenericArr<number> = [1, 2, 3];
 // const bool: boolean[] = [true, false, true]
 const bool: GenericArr<boolean> = [true, false, true];
 
+// Generic with interface
+interface Developer<T, Y = null> {
+  name: string;
+  designation: string;
+  computer: {
+    brand: string;
+    model: string;
+    year: string;
+  };
+  watch: T;
+  bike?: Y;
+}
+
+const developer: Developer<string, boolean> = {
+  name: 'Mehedi',
+  designation: 'developer',
+  computer: {
+    brand: 'hp',
+    model: 'hp13x',
+    year: '2022',
+  },
+  watch: 'apple',
+  bike: true,
+};
+
+const developer2: Developer<string> = {
+  name: 'Mehedi',
+  designation: 'developer',
+  computer: {
+    brand: 'hp',
+    model: 'hp13x',
+    year: '2022',
+  },
+  watch: 'apple',
+};
+
 // tsnd --respawn src/index.ts
