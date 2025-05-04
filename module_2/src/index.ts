@@ -7,6 +7,19 @@ text as string;
 text = 123;
 text as number;
 
-console.log('mehedi');
+// interface
+interface withRole {
+  role: string;
+  hours: number;
+}
 
+interface withRoleExtend extends withRole {
+  company: string;
+}
+
+const worker: withRoleExtend = {
+  role: 'Admin',
+  hours: 5,
+  company: 'Concord',
+};
 // tsnd --respawn src/index.ts
