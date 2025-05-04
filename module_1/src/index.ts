@@ -18,3 +18,11 @@ const data2: {
   age: 30,
   isValid: true,
 };
+
+// function
+function add(num1: number, num2: number) {
+  return num1 + num2;
+}
+add(5, 6);
+
+const arrowFunc = (num1: number, num2: number) => num1 + num2;
