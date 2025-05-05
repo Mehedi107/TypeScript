@@ -47,4 +47,10 @@ const student1 = addToStudent({
     age: 20,
     mail: 'x@gmail.com',
 });
+// Constraints
+const studentInfo = (data) => {
+    const course = 'NLWD';
+    return Object.assign(Object.assign({}, data), { course });
+};
+const student2 = studentInfo({ name: 'YYY', email: 'y@gmail.com', id: '111' });
 // tsnd --respawn src/index.ts

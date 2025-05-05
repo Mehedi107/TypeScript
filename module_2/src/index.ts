@@ -88,4 +88,26 @@ const student1 = addToStudent({
   mail: 'x@gmail.com',
 });
 
+// Constraints
+const studentInfo = <T extends { id: string; email: string }>(data: T) => {
+  const course = 'NLWD';
+  return {
+    ...data,
+    course,
+  };
+};
+
+const student2 = studentInfo({ name: 'YYY', email: 'y@gmail.com', id: '111' });
+
+// Constraint using key of
+type Model = {
+  name: string;
+  year: number;
+};
+
+type Model2 = 'name' | 'year';
+type Model3 = keyof Model;
+
+const car: Model3 = 'year';
+
 // tsnd --respawn src/index.ts
