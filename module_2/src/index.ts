@@ -167,4 +167,40 @@ const area2: AreaStr2<{ height: number; weight: string }> = {
   weight: '300',
 };
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// some utility type script
+
+type Obj = {
+  fName: string;
+  lName: string;
+};
+
+type PersonPick = Pick<Obj, 'fName'>;
+
+type PersonOmit = Omit<Obj, 'fName'>;
+
+type PersonRequired = Required<Obj>;
+
+type PersonPartial = Partial<Obj>;
+
+type PersonReadonly = Readonly<Obj>;
+
+const personReadonly: Partial<Obj> = {
+  fName: 'Mehedi',
+  lName: 'Hasan',
+};
+
+type PersonRecord = Record<string, string>;
+
+const personRecord: PersonRecord = {
+  a: 'a',
+  b: 'b',
+};
+
+type PersonRecord2 = Record<string, unknown>;
+
+const personRecord2: PersonRecord2 = {
+  a: 'a',
+  b: 50,
+};
 // tsnd --respawn src/index.ts
