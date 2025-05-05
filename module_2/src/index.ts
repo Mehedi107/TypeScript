@@ -142,4 +142,29 @@ type Car<T> = T extends keyof Owner ? true : false;
 
 type hasCar = Car<'bike'>;
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// map in typescript
+type Area = {
+  width: number;
+  height: number;
+};
+
+type AreaStr = {
+  [key in keyof Area]: string;
+};
+
+const area: AreaStr = {
+  width: '200',
+  height: '300',
+};
+
+type AreaStr2<T> = {
+  [key in keyof T]: T[key];
+};
+
+const area2: AreaStr2<{ height: number; weight: string }> = {
+  height: 500,
+  weight: '300',
+};
+
 // tsnd --respawn src/index.ts
