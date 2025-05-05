@@ -130,7 +130,16 @@ const getData = async () => {
 };
 
 getData();
-// const data = getData();
-// console.log(data);
+
+// conditional type
+type Owner = {
+  bike: string;
+  car: string;
+  cycle: string;
+};
+
+type Car<T> = T extends keyof Owner ? true : false;
+
+type hasCar = Car<'bike'>;
 
 // tsnd --respawn src/index.ts
