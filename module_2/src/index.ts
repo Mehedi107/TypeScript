@@ -110,4 +110,27 @@ type Model3 = keyof Model;
 
 const car: Model3 = 'year';
 
+// asynchronous typescript
+const newPromise = () => {
+  return new Promise<string>((resolve, reject) => {
+    const data = 'something';
+
+    if (data) {
+      resolve(data);
+    } else {
+      reject('rejected');
+    }
+  });
+};
+
+const getData = async () => {
+  const data = await newPromise();
+  console.log(data);
+  return data;
+};
+
+getData();
+// const data = getData();
+// console.log(data);
+
 // tsnd --respawn src/index.ts
