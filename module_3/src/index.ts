@@ -12,5 +12,43 @@ class Car {
 }
 
 const bmw = new Car('BMW', 'Phantom', '2020');
-console.log(bmw);
-bmw.detail();
+// console.log(bmw);
+// bmw.detail();
+
+///////////////////////////////////////////
+// inheritance
+class ParentClass {
+  name: string;
+  email: string;
+
+  constructor(name: string, email: string) {
+    this.name = name;
+    this.email = email;
+  }
+}
+
+class Student extends ParentClass {
+  constructor(name: string, email: string) {
+    super(name, email);
+  }
+
+  studentInfo() {
+    console.log('He is a student.');
+  }
+}
+
+class Teacher extends ParentClass {
+  subject: string;
+
+  constructor(name: string, email: string, subject: string) {
+    super(name, email);
+    this.subject = subject;
+  }
+
+  teacherInfo() {
+    console.log('He is a teacher.');
+  }
+}
+
+const student = new Student('Mehedi', 'mehedi@gmail.com');
+const teacher = new Teacher('John', 'John@gmail.com', 'English');
