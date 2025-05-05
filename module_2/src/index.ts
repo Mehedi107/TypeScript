@@ -72,4 +72,20 @@ const developer2: Developer<string> = {
   watch: 'apple',
 };
 
+// Generic with function
+const addToStudent = <T>(value: T) => {
+  const course = 'Next level web development';
+
+  return {
+    ...value,
+    course,
+  };
+};
+
+const student1 = addToStudent({
+  name: 'xxx',
+  age: 20,
+  mail: 'x@gmail.com',
+});
+
 // tsnd --respawn src/index.ts
