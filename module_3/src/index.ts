@@ -52,3 +52,38 @@ class Teacher extends ParentClass {
 
 const student = new Student('Mehedi', 'mehedi@gmail.com');
 const teacher = new Teacher('John', 'John@gmail.com', 'English');
+
+////////////////////////////////////////////////
+// type guard
+const sum = (p1: string | number, p2: string | number) => {
+  if (typeof p1 === 'number' && typeof p2 === 'number') {
+    console.log(p1 + p2);
+  } else {
+    console.log(p1.toString() + p2.toString());
+  }
+};
+
+sum(1, 2);
+sum(1, '2');
+
+/////////////////////////////////////////////
+// in guard
+
+type regularUser = {
+  name: string;
+};
+
+type adminUser = {
+  name: string;
+  role: 'admin';
+};
+
+const checkUser = (user: regularUser | adminUser) => {
+  if ('role' in user) {
+    console.log('This is admin user');
+  } else {
+    console.log('this is regular user');
+  }
+};
+
+checkUser({ name: 'hasan' });
