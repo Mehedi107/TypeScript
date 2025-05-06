@@ -138,3 +138,22 @@ class BankAccount2 {
 const acc2 = new BankAccount2('2', 'Y', 50, 123);
 console.log('getter>>>>>>>>>>>>', acc2.balance);
 acc2.deposit = 50;
+
+//////////////////////////////////////////
+// static in class
+class Counter {
+  static count: number = 0;
+
+  increment() {
+    return (Counter.count = Counter.count + 1);
+  }
+
+  decrement() {
+    return (Counter.count = Counter.count - 1);
+  }
+}
+
+const instance1 = new Counter();
+console.log(instance1.increment());
+console.log(instance1.increment());
+console.log(instance1.decrement());
