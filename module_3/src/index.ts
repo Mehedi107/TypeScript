@@ -87,3 +87,26 @@ const checkUser = (user: regularUser | adminUser) => {
 };
 
 checkUser({ name: 'hasan' });
+
+/////////////////////////////////////////////
+// private, readonly and public in class
+class BankAccount {
+  readonly id: string;
+  public userName: string;
+  private _balance: number;
+  protected _code: number;
+
+  constructor(id: string, userName: string, _balance: number, _code: number) {
+    this.id = id;
+    this.userName = userName;
+    this._balance = _balance;
+    this._code = _code;
+  }
+
+  getBalance() {
+    console.log(this._balance);
+  }
+}
+
+const acc1 = new BankAccount('1', 'X', 25, 111);
+acc1.getBalance();
