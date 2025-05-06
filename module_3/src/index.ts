@@ -110,3 +110,31 @@ class BankAccount {
 
 const acc1 = new BankAccount('1', 'X', 25, 111);
 acc1.getBalance();
+
+///////////////////////////////////////////////
+// getter and setter
+class BankAccount2 {
+  readonly id: string;
+  public userName: string;
+  private _balance: number;
+  protected _code: number;
+
+  constructor(id: string, userName: string, _balance: number, _code: number) {
+    this.id = id;
+    this.userName = userName;
+    this._balance = _balance;
+    this._code = _code;
+  }
+
+  get balance() {
+    return this._balance;
+  }
+
+  set deposit(amount: number) {
+    this._balance = this._balance + amount;
+  }
+}
+
+const acc2 = new BankAccount2('2', 'Y', 50, 123);
+console.log('getter>>>>>>>>>>>>', acc2.balance);
+acc2.deposit = 50;
