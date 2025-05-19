@@ -60,6 +60,21 @@ function calculateInvestment(data: InvestmentData): CalculationResult {
   return annualResults;
 }
 
-function printResult(result) {
-  // output result...
+function printResult(results: CalculationResult) {
+  if (typeof results === 'string') {
+    console.log(results);
+    return;
+  }
+
+  for (const yearEndResult of results) {
+    console.log(yearEndResult.year);
+    console.log(`Total: ${yearEndResult.totalAmount.toFixed(0)}`);
+    console.log(
+      `Total Contributions: ${yearEndResult.totalContributions.toFixed(0)}`
+    );
+    console.log(
+      `Total Interest Earned: ${yearEndResult.totalInterestEarned.toFixed(0)}`
+    );
+    console.log('----------------------');
+  }
 }
