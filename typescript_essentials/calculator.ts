@@ -60,7 +60,7 @@ function calculateInvestment(data: InvestmentData): CalculationResult {
   return annualResults;
 }
 
-function printResult(results: CalculationResult) {
+function printResults(results: CalculationResult) {
   if (typeof results === 'string') {
     console.log(results);
     return;
@@ -78,3 +78,14 @@ function printResult(results: CalculationResult) {
     console.log('----------------------');
   }
 }
+
+const investmentData: InvestmentData = {
+  initialAmount: 5000,
+  annualContribution: 500,
+  expectedReturn: 0.08,
+  duration: 10,
+};
+
+const results = calculateInvestment(investmentData);
+
+printResults(results);
