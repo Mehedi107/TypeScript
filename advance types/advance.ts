@@ -4,6 +4,9 @@ type DataStore = {
 
 let store: DataStore = {};
 
+// Record type example
+// let store2: Record<string, number | boolean>;
+
 //...
 
 store.id = 5;
