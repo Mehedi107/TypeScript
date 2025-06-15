@@ -13,3 +13,36 @@ function checkData(source: Source) {
   }
   // source.connectionUrl - use this connection url
 }
+
+/////////////////////////////////////////
+// Type guard via instanceof
+
+class User {
+  constructor(name: string) {}
+
+  join() {
+    // ...
+  }
+}
+
+class Admin {
+  constructor(role: string[]) {}
+
+  scan() {
+    // ...
+  }
+}
+
+const user = new User('Max');
+const admin = new Admin(['ban', 'restore']);
+
+type Entity = User | Admin;
+
+function init(entity: Entity) {
+  if (entity instanceof User) {
+    // ...
+    return;
+  }
+
+  entity.scan();
+}
