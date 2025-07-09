@@ -18,10 +18,10 @@ const namesArr = merge('Mehedi', 'Max');
 const mixValue = merge(5, 'Mehedi');
 
 // generic & constraint
-function mergeObj<T extends object>(a: T, b: T) {
+function mergeObj<T extends object, U extends object>(a: T, b: U) {
   return { ...a, ...b };
 }
 
-const obj = mergeObj({ fName: 'Max' }, { lName: 'Amini' });
+const obj = mergeObj({ fName: 'Max' }, { age: 50 });
 
 console.log(obj);
