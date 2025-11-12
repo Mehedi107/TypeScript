@@ -49,4 +49,10 @@ enum Role {
 
 let role: Role = 0;
 
-role = Role.Guest
+role = Role.Guest;
+
+let userRole: 'admin' | 'guest' | 'editor' = "admin";
+
+let possibleResult: [1 | -1, 1 | -1]
+
+possibleResult = [1, -1]
