@@ -8,3 +8,8 @@ let users: Array<string | number>;
 users = [5, 'Max'];
 users = [6, 1];
 users = ['Max', 'Anna'];
+
+let numbers: [number, number] // [1, -1];
+
+numbers = [5, 6];
+numbers = [5, 8, 7];
