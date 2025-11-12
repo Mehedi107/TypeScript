@@ -33,3 +33,10 @@ let user: {
 }
 
 let val: {} = 'It is a string'; // value can not be "undefined" or "null"
+
+let data: Record<string, string | number>;
+
+data = {
+  entry1: 1,
+  entry2: '2'
+}
