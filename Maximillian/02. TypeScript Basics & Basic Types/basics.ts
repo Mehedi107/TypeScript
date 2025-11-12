@@ -2,4 +2,6 @@ console.log('Hello world!')
 
 let userName: string;
 
-userName = 'Max'
+userName = 'Max';
+
+let userAge = 18;
