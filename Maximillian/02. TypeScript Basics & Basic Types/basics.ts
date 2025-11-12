@@ -12,4 +12,4 @@ function sum (a: number, b = 5) {
 
 sum(10)
 sum(10, 10)
-sum("10")
+// sum("10")
