@@ -40,3 +40,13 @@ data = {
   entry1: 1,
   entry2: '2'
 }
+
+enum Role {
+  Admin, // 0
+  Editor, // 1
+  Guest // 2
+}
+
+let role: Role = 0;
+
+role = Role.Guest
