@@ -31,3 +31,5 @@ let user: {
     id: 5
   }
 }
+
+let val: {} = 'It is a string'; // value can not be "undefined" or "null"
