@@ -12,7 +12,7 @@ users = ['Max', 'Anna'];
 let numbers: [number, number] // [1, -1];
 
 numbers = [5, 6];
-numbers = [5, 8, 7];
+// numbers = [5, 8, 7];
 
 let user: {
   name: string;
@@ -56,3 +56,10 @@ let userRole: 'admin' | 'guest' | 'editor' = "admin";
 let possibleResult: [1 | -1, 1 | -1]
 
 possibleResult = [1, -1]
+
+// Custom types and type alias
+type Role2 = 'admin' | 'guest' | 'editor';
+
+function fn(role: Role2) {
+  //...
+}
