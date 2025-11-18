@@ -7,3 +7,9 @@ function add(a: number, b: number): number {
 function log(message: string): void {
   console.log(message);
 }
+
+// "Never" types (means it will not return anything)
+function logAndThrow(message: string) {
+  console.log(message);
+  throw new Error(message);
+}
