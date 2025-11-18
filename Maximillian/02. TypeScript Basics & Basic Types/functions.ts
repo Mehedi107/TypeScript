@@ -13,3 +13,24 @@ function logAndThrow(message: string) {
   console.log(message);
   throw new Error(message);
 }
+
+// "Function" types (means how the function will look like)
+function performJob(cb: (msg: string)=> {}) {
+  //...
+  cb('Job done');
+}
+
+type User = {
+  name: string,
+  age: number,
+  greet: () => string
+}
+
+let user: User = {
+  name: "Max",
+  age: 50,
+  greet() {
+    console.log('Hello there');
+    return 'Hello'
+  }
+}
