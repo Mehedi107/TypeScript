@@ -30,3 +30,21 @@ const user : {
   isMarried: false,
   company: 'Mehedi Mart'
 }
+
+// 1-6 Function in typescript
+/////////////////////////////
+
+function sum(a: number, b: number = 5): number {
+  return a + b;
+}
+
+let obj = {
+  fName: 'Mehedi',
+  lName: 'hasan',
+  sum(): string {
+    return `My full name is ${this.fName + ' ' + this.lName}`
+  } 
+}
+
+let arr = ['a', 'b', 'c'];
+let newArr: string[] = arr.map((item: string): string => item);
