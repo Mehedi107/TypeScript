@@ -48,3 +48,32 @@ let obj = {
 
 let arr = ['a', 'b', 'c'];
 let newArr: string[] = arr.map((item: string): string => item);
+
+// 1-7 Spread and Rest Operator
+///////////////////////////////
+
+let arr1: string[] = ['a', 'b', 'c'];
+let arr2: string[] = ['d', 'e', 'f'];
+
+arr1.push(...arr2);
+
+let obj1 = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3'
+}
+
+let obj2 = {
+  key4: 'value4',
+  key5: 'value5',
+  key6: 'value6'
+}
+
+let obj3 = {
+  ...obj1,
+  ...obj2
+}
+
+function showAllFriends(...friends: string[]): string[] {
+  return friends;
+} 
