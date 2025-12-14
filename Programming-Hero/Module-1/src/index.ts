@@ -77,3 +77,21 @@ let obj3 = {
 function showAllFriends(...friends: string[]): string[] {
   return friends;
 } 
+
+// 1-8 Destructuring in typescript
+
+let obj4 = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: {
+    innerKey1: 'innerValue1',
+    innerKey2: 'innerValue2',
+    innerKey3: 'innerValue3',
+  }
+}
+
+let {key1, key3: {innerKey2: ik3}} = obj4;
+
+let arr3 = ['andy', 'blue', 'cham', 'dove', 'evo', 'frog', 'goal'];
+
+let [idx1, idx2, ...rest] = arr3
