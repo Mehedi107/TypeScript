@@ -114,3 +114,25 @@ let user1: User = {
 type Add = (num1: number, num2: number) => number;
 
 let add: Add = (n1, n2) => n1 + n2;
+
+// 1-10 Union and Intersection types
+///////////////////////////////////
+
+type WebDeveloper = 'Frontend' | 'Backend';
+
+let developer: WebDeveloper = "Frontend";
+
+type FrontendSkills = {
+  fSkills: ['HTML', 'CSS', 'JS']
+}
+
+type BackendSkills = {
+  bSkills: ['Node', 'Express', 'Mongo']
+}
+
+type FullStackSkills = FrontendSkills & BackendSkills;
+
+let fullStackWebDeveloper: FullStackSkills = {
+  fSkills: ['HTML', 'CSS', 'JS'],
+  bSkills: ['Node', 'Express', 'Mongo']
+}
