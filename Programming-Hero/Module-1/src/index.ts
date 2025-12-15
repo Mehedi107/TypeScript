@@ -95,3 +95,22 @@ let {key1, key3: {innerKey2: ik3}} = obj4;
 let arr3 = ['andy', 'blue', 'cham', 'dove', 'evo', 'frog', 'goal'];
 
 let [idx1, idx2, ...rest] = arr3
+
+// 1-9 Type alias in typescript
+///////////////////////////////
+
+type User = {
+  name: string,
+  age: number,
+  job: string
+}
+
+let user1: User = {
+  age: 50,
+  job: 'teacher',
+  name: 'mehedi',
+}
+
+type Add = (num1: number, num2: number) => number;
+
+let add: Add = (n1, n2) => n1 + n2;
