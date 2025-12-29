@@ -136,3 +136,23 @@ let fullStackWebDeveloper: FullStackSkills = {
   fSkills: ['HTML', 'CSS', 'JS'],
   bSkills: ['Node', 'Express', 'Mongo']
 }
+
+// 1-11 Ternary, optional chaining & nullish coalescing operator
+
+const age: number = 17;
+const isAdult = age >= 18 ? true : false;
+console.log({isAdult})
+
+const user2 = null;
+const isAuthenticated = user2 ?? 'Guest';
+console.log({isAuthenticated})
+
+const user3 = {
+  name: 'mehedi',
+  age: 20,
+  address: {
+    presentAddress: 'Dhaka'
+  }
+}
+const isPermanentAddress = user3?.address?.permanentAddress ?? 'N/A';
+console.log({isPermanentAddress})
