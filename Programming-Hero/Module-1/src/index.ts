@@ -156,3 +156,23 @@ const user3 = {
 }
 const isPermanentAddress = user3?.address?.permanentAddress ?? 'N/A';
 console.log({isPermanentAddress})
+
+// 1-12 Never,unknown and nullable type
+
+const throwCustomError = (msg: string): never => {
+  throw new Error(msg)
+}
+// throwCustomError('This is from custom error')
+
+const showData = (value: unknown) => {
+  if(typeof value === 'string') {
+    console.log("It's a string")
+  } else if(typeof value === 'number') {
+    console.log("It's a number")
+  }else {
+    console.log('Not valid')
+  }
+}
+showData(10)
+
+
