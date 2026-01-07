@@ -154,8 +154,8 @@ const user3 = {
     presentAddress: 'Dhaka'
   }
 }
-const isPermanentAddress = user3?.address?.permanentAddress ?? 'N/A';
-console.log({isPermanentAddress})
+// const isPermanentAddress = user3?.address?.permanentAddress ?? 'N/A';
+// console.log({isPermanentAddress})
 
 // 1-12 Never,unknown and nullable type
 
@@ -175,4 +175,39 @@ const showData = (value: unknown) => {
 }
 showData(10)
 
+///////////////////////////////////////
+// 2-1: Type assertion / type narrowing
 
+let value: any;
+
+value = 'Max';
+
+value = 20;
+
+// (value as string).includes
+
+// (value as number)
+
+const kgToGm = (value: string | number) => {
+  if(typeof value === 'string') {
+    const convertedValue = +value * 1000;
+    return `The value is: ${convertedValue}`
+  }
+
+  if(typeof value === 'number') {
+    return value * 1000;
+  }
+}
+
+const result1 = kgToGm('5') as string;
+const result2 = kgToGm(5) as number;
+
+type customError = {
+  message: string;
+}
+
+try {
+
+} catch(error) {
+  console.log((error as customError).message);
+}
