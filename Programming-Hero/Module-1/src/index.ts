@@ -211,3 +211,60 @@ try {
 } catch(error) {
   console.log((error as customError).message);
 }
+
+/////////////////////////////////////
+// 2-2: Interface, type vs interface
+
+// type
+
+type TUser = {
+  name: string,
+  age: number,
+}
+
+type TUser2 = TUser & {
+  role: string
+}
+
+const user4: TUser2 = {
+  name: 'Max',
+  age: 20,
+  role: 'admin'
+}
+
+type TRollNumber = number[];
+
+const rollNumber: TRollNumber = [1, 2, 3];
+
+type TAdd = (n1: number, n2: number) => number;
+
+const addNumber: TAdd = (num1, num2) => num1 + num2;
+
+// interface
+
+interface IUser {
+  name: string,
+  age: number,
+}
+
+interface IUser2 extends IUser {
+  role: string
+} 
+
+const user5: IUser2 = {
+  name: 'Max',
+  age: 20,
+  role: 'admin'
+}
+
+interface IRollNumber {
+  [index: number]: number;
+}
+
+const rollNumber2: IRollNumber = [4, 5, 6];
+
+interface IAdd {
+  (n1: number, n2:number): number
+}
+
+const addNumber2: IAdd = (num1, num2) => num1 + num2;
