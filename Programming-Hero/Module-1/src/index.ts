@@ -293,3 +293,26 @@ const personObj: GenericType<obj> = [
 
 type GenericTuple<X, Y> = [X, Y]
 const personTupleGeneric: GenericTuple<string, number> = ['Max', 10 ];
+
+//////////////////////////////
+// 2-4: Generic with Interface
+
+interface GenericInterface<X, Y = null> {
+  name: string,
+  designation: string,
+  age: X,
+  role?: Y
+}
+
+const developer1: GenericInterface<number> = {
+  name: 'Max',
+  designation: 'Frontend Developer',
+  age: 50
+}
+
+const developer2: GenericInterface<number, string> = {
+  name: 'John',
+  designation: 'Backend Developer',
+  age: 50,
+  role: 'admin'
+}
