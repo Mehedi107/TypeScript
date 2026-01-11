@@ -268,3 +268,28 @@ interface IAdd {
 }
 
 const addNumber2: IAdd = (num1, num2) => num1 + num2;
+
+/////////////////////////////////
+// 2-3: Introduction to generics
+
+const nameArr1: string[] = ['X', 'Y', 'Z'];
+const nameArr2: Array<string> = ['X', 'Y', 'Z'];
+const numArr1: number[] = [1, 2, 3];
+const numArr2: Array<number> = [1, 2, 3];
+const boolArr1: boolean[] = [true, false];
+const boolArr2: Array<boolean> = [true, false];
+
+type GenericType<T> = Array<T>;
+
+const nameArr3: GenericType<string> = ['X', 'Y', 'Z'];
+const numArr3: GenericType<number> = [1, 2, 3];
+const boolArr3: GenericType<boolean> = [true, false];
+
+type obj  = {name: string, age: number}
+const personObj: GenericType<obj> = [
+  { name: 'Max', age: 20 },
+  { name: 'John', age: 50 }
+]
+
+type GenericTuple<X, Y> = [X, Y]
+const personTupleGeneric: GenericTuple<string, number> = ['Max', 10 ];
