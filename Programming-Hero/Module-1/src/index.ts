@@ -316,3 +316,28 @@ const developer2: GenericInterface<number, string> = {
   age: 50,
   role: 'admin'
 }
+
+/////////////////////////////
+// 2-5 Function with generics
+
+const functionArray = (param: string): string[] => {
+  return [param]
+}
+
+const result = functionArray('Bangladesh')
+
+const functionArryaWithGeneric = <T>(param: T): T[] => {
+  return [param]
+}
+
+const result3 = functionArryaWithGeneric<string>('Max')
+const result4 = functionArryaWithGeneric<number>(10)
+const result5 = functionArryaWithGeneric<boolean>(true)
+const result6 = functionArryaWithGeneric<object>({id: 10, name: 'max'})
+
+const functionArryaWithGenericTuple = <X, Y>(p1: X, p2: Y): [X, Y] => {
+  return [p1, p2]
+}
+
+const result7 = functionArryaWithGenericTuple<string, number>('max', 10)
+const result8 = functionArryaWithGenericTuple<boolean, object>(true, {id: 1})
