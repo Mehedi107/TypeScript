@@ -326,18 +326,44 @@ const functionArray = (param: string): string[] => {
 
 const result = functionArray('Bangladesh')
 
-const functionArryaWithGeneric = <T>(param: T): T[] => {
+const functionArrayWithGeneric = <T>(param: T): T[] => {
   return [param]
 }
 
-const result3 = functionArryaWithGeneric<string>('Max')
-const result4 = functionArryaWithGeneric<number>(10)
-const result5 = functionArryaWithGeneric<boolean>(true)
-const result6 = functionArryaWithGeneric<object>({id: 10, name: 'max'})
+const result3 = functionArrayWithGeneric<string>('Max')
+const result4 = functionArrayWithGeneric<number>(10)
+const result5 = functionArrayWithGeneric<boolean>(true)
+const result6 = functionArrayWithGeneric<object>({id: 10, name: 'max'})
 
-const functionArryaWithGenericTuple = <X, Y>(p1: X, p2: Y): [X, Y] => {
+const functionArrayWithGenericTuple = <X, Y>(p1: X, p2: Y): [X, Y] => {
   return [p1, p2]
 }
 
-const result7 = functionArryaWithGenericTuple<string, number>('max', 10)
-const result8 = functionArryaWithGenericTuple<boolean, object>(true, {id: 1})
+const result7 = functionArrayWithGenericTuple<string, number>('max', 10)
+const result8 = functionArrayWithGenericTuple<boolean, object>(true, {id: 1})
+
+/////////////////////////////////
+// 2-6: Constraints in typescript
+
+type TStudent = {
+  id: number,
+  name: string,
+  email: string
+}
+
+const randGenericFunction = <T extends TStudent>(param: T) => {
+  const course = 'Level 2'
+
+  return {
+    course,
+    ...param
+  }
+}
+
+const student1 = randGenericFunction({
+  id: 1,
+  name: 'stu1',
+  email: 'stu1@gmail.com',
+  isAdult: false
+})
+
