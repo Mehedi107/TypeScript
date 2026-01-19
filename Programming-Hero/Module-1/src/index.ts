@@ -367,3 +367,33 @@ const student1 = randGenericFunction({
   isAdult: false
 })
 
+///////////////////////////////
+// 2-7 Constraint using key of
+
+type Vehicle = {
+  cycle: string,
+  bike: string,
+  car: string
+}
+
+type Vehicle2 = 'cycle' | 'bike' | 'car'; // manual
+type Vehicle3 = keyof Vehicle; // automatic
+
+const person = {
+  name: 'Xen',
+  age: 10,
+  job: 'student'
+}
+
+const person2 = {
+  name: 'Hen',
+  age: 20,
+  isAdult: false
+}
+
+const objectWithProperty = <O, K extends keyof O>(obj: O, key: K) => {
+  return obj[key];
+}
+
+const result9 = objectWithProperty(person, 'name')
+const result10 = objectWithProperty(person2, 'isAdult')
