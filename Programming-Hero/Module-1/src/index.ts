@@ -397,3 +397,18 @@ const objectWithProperty = <O, K extends keyof O>(obj: O, key: K) => {
 
 const result9 = objectWithProperty(person, 'name')
 const result10 = objectWithProperty(person2, 'isAdult')
+
+///////////////////////////////
+// 2-8: Asynchronous typescript
+
+const fetchData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data load successfully")
+    }, 2000);
+  })
+}
+
+fetchData().then((data) => {
+  console.log(data)
+})
