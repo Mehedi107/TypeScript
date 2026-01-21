@@ -412,3 +412,11 @@ const fetchData = () => {
 fetchData().then((data) => {
   console.log(data)
 })
+
+/////////////////////////
+// 2-9: Conditional types
+
+type ApiResponse<T> = T extends string ? {data: string} : {data: number}
+
+type response1 = ApiResponse<string>
+type response2 = ApiResponse<number>
