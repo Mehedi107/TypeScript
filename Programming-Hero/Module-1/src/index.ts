@@ -434,3 +434,53 @@ type User1 = {
 }
 
 type convertedToStringType = Stringify<User1>
+
+/////////////////////
+// 2-11 Utility types
+
+type User2 = {
+  name: string,
+  age?: number,
+  email: string,
+  contactNo?: string
+}
+
+type PartialUser2 = Partial<User2>
+type RequiredUser2 = Required<User2>
+type PickUser2 = Pick<User2, 'name' | 'age'>
+type OmitUser2 = Omit<User2, 'email' | 'contactNo'>
+
+type Obj = {
+  a: string,
+  b: string,
+}
+
+type RecordObj = Record<string, unknown>
+
+const obj5: RecordObj = {
+  a: 'aa',
+  b: 'bb',
+  c: 'cc'
+}
+
+type Status = 'Finish' | 'Error' | 'Loading';
+
+type ExcludeType = Exclude<Status, 'Loading'>
+type ExtractType = Extract<Status, 'Finish'>
+
+// ➡️ Remove null and undefined
+type SafeValue = NonNullable<string | null | undefined>
+
+// ➡️ Get function return type
+function getUser() {
+  return { name: "Mehedi", age: 24 };
+}
+
+type UserReturn = ReturnType<typeof getUser>;
+
+
+// ➡️ Get function parameter types
+type Params = Parameters<(id: number, name: string) => void>;
+
+// ➡️ Extract resolved value from a Promise
+type Data = Awaited<Promise<string>>;
