@@ -420,3 +420,17 @@ type ApiResponse<T> = T extends string ? {data: string} : {data: number}
 
 type response1 = ApiResponse<string>
 type response2 = ApiResponse<number>
+
+/////////////////////
+// 2-10: Mapped types
+
+type Stringify<T> = {
+  [K in keyof T]: string;
+}
+
+type User1 = {
+  name: string,
+  age: number
+}
+
+type convertedToStringType = Stringify<User1>
