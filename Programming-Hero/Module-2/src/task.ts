@@ -82,3 +82,21 @@ const returnStringOrNumber = (input: string | number): string | number => {
     return input * input;
   }
 }
+
+// Task 8: Intersection Types
+type User = {
+  name: string,
+  email: string,
+}
+
+type Admin = {
+  adminLevel: number
+}
+
+type AdminUser = User & Admin
+
+const describeAdmin = (user: AdminUser): string => {
+  return `My name is ${user.name}, my email is ${user.email} and my admin level is ${user.adminLevel}.`
+}
+
+const result11 = describeAdmin({name:"Max", email: 'x@gmail.com', adminLevel: 1})
