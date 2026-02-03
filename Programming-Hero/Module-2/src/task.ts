@@ -73,3 +73,12 @@ console.log(reverseString('Hello'))
 const someOfArbitraryNumber = (...num: number[]): number => {
   return num.reduce((sum, n) => sum + n, 0);
 }
+
+// Task 7: Type Assertion and Narrowing
+const returnStringOrNumber = (input: string | number): string | number => {
+  if(typeof input === 'string') {
+    return input.length
+  } else {
+    return input * input;
+  }
+}
