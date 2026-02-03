@@ -60,8 +60,16 @@ const bookAndMagazine = {
   issueNumber: 247
 }
 
+// Task 5: Function Type
+
 const reverseString = (input: string): string => {
   return input.split('').reverse().join('')
 } 
 
 console.log(reverseString('Hello'))
+
+// Task 6: Spread and Rest Operators, Destructuring
+
+const someOfArbitraryNumber = (...num: number[]): number => {
+  return num.reduce((sum, n) => sum + n, 0);
+}
