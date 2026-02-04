@@ -100,3 +100,27 @@ const describeAdmin = (user: AdminUser): string => {
 }
 
 const result11 = describeAdmin({name:"Max", email: 'x@gmail.com', adminLevel: 1})
+
+// Task 9: Optional Chaining
+
+type Employee = {
+  id: string,
+  name: string,
+  address?: {
+    city?: string
+  }
+}
+
+const getEmployeeCity = (employee: Employee): string | undefined => {
+  return employee?.address?.city
+}
+
+const employeeObj: Employee = {
+  id: '01',
+  name: 'Jon',
+  address: {
+    city: 'New York'
+  }
+}
+
+const employee1 = getEmployeeCity(employeeObj)
