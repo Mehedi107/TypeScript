@@ -190,3 +190,20 @@ const getUser2 = async () => {
 }
 
 getUser2()
+
+// Task 15: Type Guards
+const isString = (value: unknown): value is string => {
+  return typeof value === "string"
+}
+
+const printUpperCase = (value: unknown): void => {
+  if (isString(value)) {
+    console.log(value.toUpperCase())
+  } else {
+    console.log("Not a string")
+  }
+}
+
+printUpperCase("hello")
+printUpperCase(10)
+printUpperCase(true)
