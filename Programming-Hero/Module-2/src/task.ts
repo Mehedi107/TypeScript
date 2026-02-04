@@ -124,3 +124,13 @@ const employeeObj: Employee = {
 }
 
 const employee1 = getEmployeeCity(employeeObj)
+
+// Task 10: Nullish Coalescing
+
+const getDisplayName = (name: string | null | undefined): string => {
+  return name ?? 'Anonymous';
+}
+
+const n = getDisplayName('Max')
+const n2 = getDisplayName(null)
+const n3 = getDisplayName(undefined)
