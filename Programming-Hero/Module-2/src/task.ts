@@ -207,3 +207,9 @@ const printUpperCase = (value: unknown): void => {
 printUpperCase("hello")
 printUpperCase(10)
 printUpperCase(true)
+
+// Task 16: Utility Types and Keyof Constraints
+const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
+  return obj[key]
+}
+
