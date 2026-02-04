@@ -149,3 +149,8 @@ const processData = (data: unknown) => {
 const res1 = processData('data')
 const res2 = processData(10)
 const res3 = processData(true)
+
+// Task 12: Never Type
+const handleError = (message: string): never => {
+  throw new Error(message)
+} 
