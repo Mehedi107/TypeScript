@@ -154,3 +154,14 @@ const res3 = processData(true)
 const handleError = (message: string): never => {
   throw new Error(message)
 } 
+
+// Task 13: Generics with Functions and Interfaces
+const removeDuplicates = <T>(items: T[]): T[] => {
+  return [...new Set(items)]
+}
+
+const nums = removeDuplicates([1, 2, 2, 3, 4, 4])
+
+const strings = removeDuplicates(["a", "b", "a", "c"])
+
+const booleans = removeDuplicates([true, false, true])
