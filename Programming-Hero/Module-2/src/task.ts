@@ -165,3 +165,28 @@ const nums = removeDuplicates([1, 2, 2, 3, 4, 4])
 const strings = removeDuplicates(["a", "b", "a", "c"])
 
 const booleans = removeDuplicates([true, false, true])
+
+// Task 14: Asynchronous TypeScript and Type Aliases
+type User3 = {
+  name: string,
+  age: number,
+}
+const fetchUserData = async (): Promise<User3> => {
+  return new Promise((res, rej) => {
+    setTimeout(() =>{
+      return res({
+        name: 'max',
+        age: 20,
+      })
+    },1000)
+  })
+}
+
+const getUser2 = async () => {
+  const user = await fetchUserData()
+
+  console.log(user.name);
+  console.log(user.age);
+}
+
+getUser2()
