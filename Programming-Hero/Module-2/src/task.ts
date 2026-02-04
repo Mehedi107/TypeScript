@@ -134,3 +134,18 @@ const getDisplayName = (name: string | null | undefined): string => {
 const n = getDisplayName('Max')
 const n2 = getDisplayName(null)
 const n3 = getDisplayName(undefined)
+
+// Task 11: Unknown Type
+const processData = (data: unknown) => {
+  if(typeof data === 'string') {
+    return data.toUpperCase()
+  }else if(typeof data === 'number') {
+    return data * data;
+  }else {
+    return 'Something else data'
+  }
+}
+
+const res1 = processData('data')
+const res2 = processData(10)
+const res3 = processData(true)
