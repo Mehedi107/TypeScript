@@ -89,3 +89,58 @@ const seeTypeOfUser = (user: User | AdminUser): string => {
 
 console.log(seeTypeOfUser({name: 'Mehedi'}));
 console.log(seeTypeOfUser({name: 'Mehedi', role: 'admin'}));
+
+// ✅ 3-4: Type guard using instance of
+
+class Animal2 {
+  name: string;
+  species: String;
+
+  constructor(name: string, species: String) {
+    this.name = name
+    this.species = species
+  }
+
+  makeSound() {
+    console.log('I am making sound');
+  }
+}
+
+class Dog extends Animal2 {
+  constructor(name: string, species: String) {
+    super(name, species)
+  }
+
+  makeBark() {
+    console.log('I am Barking');
+  }
+}
+
+class Cat extends Animal2 {
+  constructor(name: string, species: String) {
+    super(name, species)
+  }
+
+  makeMew() {
+    console.log('I am Mewing');
+  }
+}
+
+const dog2 = new Dog('Tom', 'Dog')
+const cat2 = new Cat('Jerry', 'Cat')
+
+const isDog = (animal: Animal2) => animal instanceof Dog;
+const isCat = (animal: Animal2) => animal instanceof Cat;
+
+const getAnimal = (animal: Animal2) => {
+  if (isDog(animal)) {
+    console.log('I am Dog');
+  }else if (isCat(animal)) {
+    console.log('I am Cat');
+  }else {
+    console.log('I am an Animal');
+  }
+}
+
+getAnimal(dog2)
+getAnimal(cat2)
