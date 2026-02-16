@@ -144,3 +144,44 @@ const getAnimal = (animal: Animal2) => {
 
 getAnimal(dog2)
 getAnimal(cat2)
+
+// ✅ 3-5: Access modifiers
+
+class BankAccount {
+  public readonly id: string;
+  public name: string;
+  // private balance: number;
+  protected balance: number;
+
+  constructor(id: string, name: string, balance: number) {
+    this.id = id
+    this.name = name
+    this.balance = balance
+  }
+
+  addBalance(newBalance: number) {
+    this.balance = this.balance + newBalance
+  }
+
+  getBalance() {
+    return this.balance;
+  }
+}
+
+const account = new BankAccount('111', 'Max', 100)
+
+// console.log('Balance: ', account.balance);
+// account.balance = 200
+// console.log('Modified Balance: ', account.balance);
+
+console.log('Balance: ', account.getBalance());
+
+account.addBalance(200)
+
+console.log('New Balance: ', account.getBalance());
+
+class StudentBankAccount extends BankAccount {
+  test() {
+    return this.balance
+  }
+}
