@@ -159,12 +159,20 @@ class BankAccount {
     this.balance = balance
   }
 
-  addBalance(newBalance: number) {
-    this.balance = this.balance + newBalance
+  // addBalance(newBalance: number) {
+  //   this.balance = this.balance + newBalance
+  // }
+
+  set addBalance(newBalance: number) {
+    this.balance += newBalance;
   }
 
-  getBalance() {
-    return this.balance;
+  // getBalance() {
+  //   return this.balance;
+  // }
+
+  get getBalance() {
+    return this.balance
   }
 }
 
@@ -174,11 +182,15 @@ const account = new BankAccount('111', 'Max', 100)
 // account.balance = 200
 // console.log('Modified Balance: ', account.balance);
 
-console.log('Balance: ', account.getBalance());
+// console.log('Balance: ', account.getBalance());
 
-account.addBalance(200)
+// account.addBalance(200)
 
-console.log('New Balance: ', account.getBalance());
+
+account.addBalance = 50
+
+// console.log('New Balance: ', account.getBalance());
+console.log('New Balance: ', account.getBalance);
 
 class StudentBankAccount extends BankAccount {
   test() {
