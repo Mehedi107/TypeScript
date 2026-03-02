@@ -197,3 +197,27 @@ class StudentBankAccount extends BankAccount {
     return this.balance
   }
 }
+
+// ✅ 3-7 Statics in OOP
+
+class Counter {
+  static count = 0
+  
+  increment() {
+    return Counter.count += 1
+  }
+
+  decrement() {
+    return Counter.count -= 1
+  }
+}
+
+const ins1 = new Counter()
+const ins2 = new Counter()
+
+
+console.log(ins1.increment());
+console.log(ins1.increment());
+console.log(ins1.increment());
+console.log(ins2.increment());
+console.log(ins2.increment());

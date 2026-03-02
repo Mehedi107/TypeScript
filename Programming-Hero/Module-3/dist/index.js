@@ -130,9 +130,26 @@ const account = new BankAccount('111', 'Max', 100);
 // account.addBalance(200)
 account.addBalance = 50;
 // console.log('New Balance: ', account.getBalance());
-console.log('New Balanceccc: ', account.getBalance);
+console.log('New Balance: ', account.getBalance);
 class StudentBankAccount extends BankAccount {
     test() {
         return this.balance;
     }
 }
+// ✅ 3-7 Statics in OOP
+class Counter {
+    increment() {
+        return Counter.count += 1;
+    }
+    decrement() {
+        return Counter.count -= 1;
+    }
+}
+Counter.count = 0;
+const ins1 = new Counter();
+const ins2 = new Counter();
+console.log(ins1.increment());
+console.log(ins1.increment());
+console.log(ins1.increment());
+console.log(ins2.increment());
+console.log(ins2.increment());
