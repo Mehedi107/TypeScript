@@ -70,3 +70,47 @@ function serveTea(teaType: MilkTea | BlackTea) {
   
   return `${teaType.server()}`
 }
+
+// ✅ In TypeScript, an interface is used to define the structure (shape) of an object. It tells TypeScript what properties an object should have and what their types are.
+
+interface User {
+  name: string,
+  age?: number,
+  greet?(): string,
+}
+
+const user1: User = {
+  name: "Mehedi",
+  age: 40,
+}
+const user2: User = {
+  name: "Safa",
+  greet() {
+    return `Hello ${this.name}`
+  }
+}
+
+interface Add {
+  (a: number, b: number): number
+}
+
+const add: Add = (a, b) => a + b
+
+// Extending Interfaces (Inheritance)
+
+interface Animal {
+  name: string,
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "Tommy",
+  breed: "Germen Shepherd"
+}
+
+// Simple rule:
+// Use interface → for objects & class structure
+// Use type → for unions, complex types
