@@ -114,3 +114,40 @@ const myDog: Dog = {
 // Simple rule:
 // Use interface → for objects & class structure
 // Use type → for unions, complex types
+
+// ✅ objects
+
+type Person = {
+  name: string,
+  age: number,
+  address: string,
+  married?: boolean
+}
+
+const p1: Person = {
+  name: "Mehedi",
+  age: 10,
+  address: 'Dhaka',
+  married: false
+}
+
+const p2: Partial<Person> = {
+  name: 'Mehedi',
+  age: 10
+}
+
+const p3: Partial<Person> = {
+  name: 'Mehedi',
+  age: 10
+}
+
+const p4: Omit<Person, "married"> = {
+  name: "mahdi",
+  address: 'dhaka',
+  age: 10
+}
+
+const p5: Pick<Person, 'name'> = {
+  name: "Mehedi",
+}
+
