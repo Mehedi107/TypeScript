@@ -209,3 +209,22 @@ const allPost: IPost[] = [
 const printPostTitle = (post: IPost) => {
   console.log(post.title);
 }
+
+// ✅ Generics
+
+function returnValue<T> (value: T): T {
+  return value;
+}
+
+const res1 = returnValue<string>('50')
+const res2 = returnValue<number>(10)
+const res3 = returnValue<boolean>(true)
+const res4 = returnValue(true)
+
+
+function getFirstElement<T>(element: T[]) {
+  return element[0]
+}
+
+const el = [1,2,3]
+const el2 = ['a','b','c']
