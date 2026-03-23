@@ -151,3 +151,61 @@ const p5: Pick<Person, 'name'> = {
   name: "Mehedi",
 }
 
+// ✅ Interface
+
+interface IUser {
+  name: string;
+  age: number;
+  city?: string
+}
+
+const u1: IUser = {
+  name: 'Mehedi',
+  age: 20
+}
+
+interface IAdd {
+  (a: number, b: number): number
+}
+
+const sum: IAdd = (a, b) => a + b;
+
+// ✅ simple task
+
+interface IPost {
+  id: string;
+  title: string;
+  description: string;
+}
+
+
+
+// Write a function to print post title
+
+const postObj: IPost = {
+  id: '01',
+  title: 'First post title',
+  description: 'Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.'
+}
+
+const allPost: IPost[] = [
+  {
+    id: '01',
+    title: 'First post title',
+    description: 'Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.'
+  },
+  {
+    id: '02',
+    title: 'First post title',
+    description: 'Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.'
+  },
+  {
+    id: '03',
+    title: 'First post title',
+    description: 'Vivamus lacinia lacus vel neque egestas, vitae volutpat purus dapibus. Nullam nec ultricies erat. Etiam ac urna metus. Sed cursus libero id ullamcorper interdum. Donec non urna et erat vehicula porttitor. Vivamus a sagittis dolor. Nulla facilisi. Cras euismod orci at felis cursus, vel vulputate sapien suscipit.'
+  },
+]
+
+const printPostTitle = (post: IPost) => {
+  console.log(post.title);
+}
