@@ -253,3 +253,53 @@ const p3 = new Developer2()
 getSleepHours(p1)
 getSleepHours(p2)
 getSleepHours(p3)
+
+// ✅ 3-9 Abstraction in OOP
+
+interface IVehicle {
+  startEngine(): void;
+  stopEngine(): void;
+  move(): void;
+}
+
+class Car1 implements IVehicle {
+  startEngine() {
+    console.log('Engine Started');
+  }
+
+  stopEngine() {
+    console.log('Engine Started');
+  }
+
+  move() {
+    console.log('Engine Started');
+  }
+}
+
+const toyotaCar = new Car1()
+toyotaCar.startEngine()
+
+//////////////////////
+
+abstract class IVehicle2 {
+  abstract startEngine(): void;
+  abstract stopEngine(): void;
+  abstract move(): void;
+}
+
+class Car2 implements IVehicle2 {
+  startEngine() {
+    console.log('Engine Started');
+  }
+
+  stopEngine() {
+    console.log('Engine Started');
+  }
+
+  move() {
+    console.log('Engine Started');
+  }
+}
+
+const hondaCar = new Car2()
+hondaCar.startEngine()
