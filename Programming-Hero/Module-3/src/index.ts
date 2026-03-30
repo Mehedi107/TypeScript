@@ -221,3 +221,35 @@ console.log(ins1.increment());
 console.log(ins1.increment());
 console.log(ins2.increment());
 console.log(ins2.increment());
+
+// ✅ 3-8 Polymorphism
+
+class Person2 {
+  getSleep() {
+    return 'I sleep 8 hours a day.';
+  }
+}
+
+class Student2 extends Person2 {
+  getSleep() {
+    return 'I sleep 7 hours a day.';
+  }
+}
+
+class Developer2 extends Person2 {
+  getSleep() {
+    return 'I sleep 6 hours a day.';
+  }
+}
+
+const getSleepHours = (param: Person2) => {
+  console.log(param.getSleep());
+}
+
+const p1 = new Person2()
+const p2 = new Student2()
+const p3 = new Developer2()
+
+getSleepHours(p1)
+getSleepHours(p2)
+getSleepHours(p3)
